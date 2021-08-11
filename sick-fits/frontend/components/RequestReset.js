@@ -26,8 +26,6 @@ export default function SignUp() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await signup().catch(console.error);
-    console.log(res);
-    console.log({ data, loading, error });
     resetForm();
     // Send the email and password to the graphql api
   }
@@ -35,7 +33,7 @@ export default function SignUp() {
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Requet a Password Reset</h2>
       <Error error={error} />
-      <fieldset>
+      <fieldset aria-busy={loading}>
         {data?.sendUserPasswordResetLink === null && (
           <p>Success! Check your email for a link!</p>
         )}

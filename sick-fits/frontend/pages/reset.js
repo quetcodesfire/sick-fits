@@ -2,7 +2,6 @@ import Reset from '../components/Reset';
 import RequestReset from '../components/RequestReset';
 
 export default function ResetPage({ query }) {
-  console.log(query.token);
   if (!query?.token) {
     return (
       <div>

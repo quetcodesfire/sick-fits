@@ -36,12 +36,9 @@ export default function Reset({ token }) {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await reset().catch(console.error);
-    console.log(res);
-    console.log({ data, loading, error });
     resetForm();
     // Send the email and password to the graphql api
   }
-  console.log(token);
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Reset Your Password</h2>

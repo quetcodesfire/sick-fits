@@ -36,7 +36,6 @@ export default function SignIn() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await signin();
-    console.log(res);
     resetForm();
     // Send the email and password to the graphql api
   }
@@ -49,7 +48,7 @@ export default function SignIn() {
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Sign Into Your Account</h2>
       <Error error={error} />
-      <fieldset>
+      <fieldset aria-busy={loading}>
         <label htmlFor="email">
           Email
           <input
